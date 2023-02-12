@@ -40,7 +40,6 @@ database_administration = database.DataBase(user=config_data['database'][0]['dat
                                             host="localhost", port=3306,
                                             database=config_data['database'][0]['database_administration_name'])
 database_administration.connection()
-print(database_administration.select("SELECT * FROM user"))
 
 
 @app.route('/')
