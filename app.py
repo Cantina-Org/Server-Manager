@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, make_response, redirect, url_
 from Utils import database
 from hashlib import sha256
 from argon2 import argon2_hash
-from json import loads
+from json import load
 from datetime import datetime
-import os
+from os import getcwd, path
 
 
 def salt_password(passwordtohash, user_name, new_account=False):
@@ -32,12 +32,15 @@ def make_log(action_name, user_ip, user_token, log_level, argument=None, content
 
 
 app = Flask(__name__)
-conf_file = os.open(os.path.abspath(os.getcwd()) + "/config.json", os.O_RDONLY)
-config_data = loads(os.read(conf_file, 800))
+with open(path.abspath(getcwd()) + "/config.json") as conf_file:
+    config_data = load(conf_file)
+
 database_administration = database.DataBase(user=config_data['database'][0]['database_username'],
                                             password=config_data['database'][0]['database_password'],
                                             host="localhost", port=3306,
                                             database=config_data['database'][0]['database_administration_name'])
+database_administration.connection()
+print(database_administration.select("SELECT * FROM user"))
 
 
 @app.route('/')
@@ -56,7 +59,7 @@ def login():
         try:
             make_log('login', request.remote_addr, row[2], 1)
             resp = make_response(redirect(url_for('home')))
-            resp.set_cookie('userID', row[2])
+            resp.set_cookie('userID', row[2], domain='*')
             database_administration.insert(f'''UPDATE user SET last_online=%s WHERE token=%s''',
                                            (datetime.now(), row[2]))
             return resp
