@@ -50,7 +50,14 @@ database_administration.create_table("CREATE TABLE IF NOT EXISTS log(id INT PRIM
 
 @app.route('/')
 def home():
-    return 'Hello World!'
+    if not request.cookies.get('userID'):
+        return redirect(url_for('login'))
+    data = database_administration.select('''SELECT user_name, admin FROM user WHERE token = %s''',
+                                          (request.cookies.get('userID'),), 1)
+    try:
+        return render_template('home.html', cur=data)
+    except IndexError:
+        return redirect(url_for('login'))
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -58,13 +65,14 @@ def login():
     if request.method == 'POST':
         user = request.form['nm']
         passwd = request.form['passwd']
+
         row = database_administration.select(f'''SELECT user_name, password, token FROM user WHERE password = %s 
         AND user_name = %s''', (salt_password(passwd, user), user), 1)
 
         try:
             make_log('login', request.remote_addr, row[2], 1)
             resp = make_response(redirect(url_for('home')))
-            resp.set_cookie('userID', row[2], domain='*')
+            resp.set_cookie('userID', row[2])
             database_administration.insert(f'''UPDATE user SET last_online=%s WHERE token=%s''',
                                            (datetime.now(), row[2]))
             return resp

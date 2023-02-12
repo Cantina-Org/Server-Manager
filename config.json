@@ -5,5 +5,5 @@
     "database_administration_name": "cantina_administration",
     "database_server_manager_name": "cantina_server_manager"
   }],
-  "port": 5000
+  "port": 2002
 }
