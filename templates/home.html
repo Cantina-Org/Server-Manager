@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cantina - Home</title>
+</head>
+<body>
+    <div class="has-text-centered">
+        <h1 class="is-size-1"><a href="{{ url_for('home') }}">Cantina</a></h1><br>
+        <h1 class="is-size-3">Bonjour {{ cur[0] }}!</h1><br>
+        <a class="is-size-4" href="#">Mes Service</a><br>
+        {% if cur[1] %}
+            <a class="is-size-4" href="#">Panel d'administration (soon)</a>
+        {% endif %}
+    </div>
+</body>
+</html>

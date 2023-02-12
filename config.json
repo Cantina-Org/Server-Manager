@@ -1,0 +1,9 @@
+{
+  "database": [{
+    "database_username": "cantina",
+    "database_password": "LeMdPDeTest",
+    "database_administration_name": "cantina_administration",
+    "database_server_manager_name": "cantina_server_manager"
+  }],
+  "port": 2002
+}
