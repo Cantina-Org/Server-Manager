@@ -39,13 +39,20 @@ database_administration = database.DataBase(user=config_data['database'][0]['dat
                                             password=config_data['database'][0]['database_password'],
                                             host="localhost", port=3306,
                                             database=config_data['database'][0]['database_administration_name'])
+database_server_manager = database.DataBase(user=config_data['database'][0]['database_username'],
+                                            password=config_data['database'][0]['database_password'],
+                                            host="localhost", port=3306,
+                                            database=config_data['database'][0]['database_server_manager_name'])
 database_administration.connection()
-database_administration.create_table("CREATE TABLE IF NOT EXISTS user(ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT, "
+database_server_manager.connection()
+database_administration.create_table("CREATE TABLE IF NOT EXISTS user(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, "
                                      "token TEXT,  user_name TEXT, salt TEXT, password TEXT, admin BOOL, "
                                      "work_Dir TEXT, last_online TEXT)")
 database_administration.create_table("CREATE TABLE IF NOT EXISTS log(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, "
                                      "name TEXT,  user_ip text, user_token TEXT, argument TEXT, log_level INT, "
                                      "date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)")
+database_server_manager.create_table("CREATE TABLE IF NOT EXISTS server(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,"
+                                     "name TEXT, owner_token TEXT, run_command TEXT, path TEXT)")
 
 
 @app.route('/')
