@@ -99,5 +99,10 @@ def logout():
     return resp
 
 
+@app.route('/server/<server_id>')
+def server(server_id=None):
+    pass
+
+
 if __name__ == '__main__':
     app.run()
