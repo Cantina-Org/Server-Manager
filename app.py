@@ -99,5 +99,18 @@ def logout():
     return resp
 
 
+@app.route('/server/<server_id>')
+def server(server_id=None):
+    user_token = request.cookies.get('userID')
+    if not user_token:
+        return redirect(url_for('login'))
+
+    if server_id:
+        data = database_server_manager.select('SELECT * FROM cantina_server_manager.server WHERE id=%s', (server_id,), 1)
+        return render_template('server_data.html', data=data)
+    else:
+        return redirect(url_for('home'))
+
+
 if __name__ == '__main__':
     app.run()
