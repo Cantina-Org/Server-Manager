@@ -10,7 +10,7 @@ from os import getcwd, path
 def salt_password(passwordtohash, user_name, new_account=False):
     try:
         if not new_account:
-            data = database.select('''SELECT salt FROM user WHERE user_name=%s''', (user_name,), 1)
+            data = database.select('''SELECT salt FROM cantina_administration.user WHERE user_name=%s''', (user_name,), 1)
             passw = sha256(argon2_hash(passwordtohash, data[0])).hexdigest().encode()
             return passw
         else:
@@ -53,7 +53,7 @@ database.create_table("CREATE TABLE IF NOT EXISTS cantina_server_manager.server(
 def home():
     if not request.cookies.get('userID'):
         return redirect(url_for('login'))
-    data = database.select('''SELECT user_name, admin FROM user WHERE token = %s''',
+    data = database.select('''SELECT user_name, admin FROM cantina_administration.user WHERE token = %s''',
                            (request.cookies.get('userID'),), 1)
     try:
         return render_template('home.html', cur=data)
@@ -105,7 +105,8 @@ def server(server_id=None):
         return render_template('server_data.html', data=data)
     else:
         data = database.select('SELECT * FROM cantina_server_manager.server')
-        user_permission = database.select('SELECT admin FROM cantina_administration.user')
+        user_permission = database.select('SELECT admin FROM cantina_administration.user WHERE token=%s', (user_token,),
+                                          1)
         return render_template('all_server.html', data=data, user_permission=user_permission)
 
 
