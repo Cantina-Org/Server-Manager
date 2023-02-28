@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="has-text-centered">
-        <h1 class="is-size-1"><a href="">Cantina</a></h1><br>
+        <h1 class="is-size-1"><a href="{{ url_for('home') }}">Cantina</a></h1><br>
     </div>
     <div class="is-centered">
         {% if user_permission[0] %}

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, make_response, redirect, url_for
-from Utils import database as db
+from Utils import database as db, user
 from hashlib import sha256
 from argon2 import argon2_hash
 from json import load
@@ -108,6 +108,16 @@ def server(server_id=None):
         user_permission = database.select('SELECT admin FROM cantina_administration.user WHERE token=%s', (user_token,),
                                           1)
         return render_template('all_server.html', data=data, user_permission=user_permission)
+
+
+@app.route('/server/create')
+def create_server():
+    user_token = request.cookies.get('userID')
+    if not user_token:
+        return redirect(url_for('login'))
+
+    if not user.is_user_admin(database, user_token):
+        return redirect(url_for('server'))
 
 
 if __name__ == '__main__':
