@@ -111,14 +111,26 @@ def server(server_id=None):
         return render_template('all_server.html', data=data, user_permission=user_permission)
 
 
-@app.route('/server/create')
-def create_server():
+@app.route('/server/create', methods=['POST', 'GET'])
+def create_server(alert=False):
     user_token = request.cookies.get('userID')
     if not user_token:
         return redirect(url_for('login'))
 
     if not User.is_user_admin(database, user_token):
         return redirect(url_for('server'))
+
+    if request.method == 'GET':
+        return render_template('create_server.html', alert=alert)
+    elif request.method == 'POST':
+        if not request.form['server-name'] or not request.form['server-cmd']:
+            return redirect(url_for('create_server', alert=True))
+
+        server_name = request.form['server-name']
+        server_cmd = request.form['server-cmd']
+
+        database.insert("""INSERT INTO cantina_server_manager.server(name, owner_token, run_command, path) VALUES 
+        (%s, %s, %s, %s)""", (server_name, request.cookies.get('userID'), server_cmd, ))
 
 
 if __name__ == '__main__':

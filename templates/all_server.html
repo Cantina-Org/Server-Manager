@@ -13,7 +13,7 @@
     </div>
     <div class="is-centered">
         {% if user_permission[0] %}
-            <button class="button is-primary" onclick="window.location.href=''">
+            <button class="button is-primary" onclick="window.location.href='{{ url_for('create_server') }}'">
                 <span class="icon is-normal" >
                     <i><img src="" alt="A MODIFIER"/></i>
                 </span>

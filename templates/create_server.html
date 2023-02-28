@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cantina - Create Server</title>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        if(urlParams.get('alert')){
+            alert("Merci de remplir tout les champs requis!")
+        }
+    </script>
+</head>
+<body>
+    <div class="has-text-centered">
+        <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
+        <div class="columns is-centered is-vcentered">
+            <form action="{{ url_for('create_server') }}" method="post">
+                <label class="is-size-4">Nom du serveur: </label>
+                <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer le nom du serveur" name="server-name" required></label><br>
+                <label class="is-size-4">La commande de lancement: </label>
+                <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
+                <button class="button is-primary" type="submit">Créer le serveur</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
