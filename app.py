@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, make_response, redirect, url_for
+from werkzeug.utils import secure_filename
 from Utils import Database, User
 from hashlib import sha256
 from argon2 import argon2_hash
 from json import load
 from datetime import datetime
-from os import getcwd, path
+from os import getcwd, path, mkdir
 
 
 def salt_password(passwordtohash, user_name, new_account=False):
@@ -32,6 +33,7 @@ def make_log(action_name, user_ip, user_token, log_level, argument=None, content
         log_level) VALUES (%s, %s, %s,%s,%s)''', (str(action_name), str(user_ip), str(user_token), argument, log_level))
 
 
+dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
 with open(path.abspath(getcwd()) + "/config.json") as conf_file:
     config_data = load(conf_file)
@@ -128,9 +130,12 @@ def create_server(alert=False):
 
         server_name = request.form['server-name']
         server_cmd = request.form['server-cmd']
+        server_path = dir_path+secure_filename(server_name)
 
+        mkdir(server_path)
         database.insert("""INSERT INTO cantina_server_manager.server(name, owner_token, run_command, path) VALUES 
-        (%s, %s, %s, %s)""", (server_name, request.cookies.get('userID'), server_cmd, ))
+        (%s, %s, %s, %s)""", (server_name, request.cookies.get('userID'), server_cmd, server_path))
+        return redirect(url_for('server'))
 
 
 if __name__ == '__main__':
