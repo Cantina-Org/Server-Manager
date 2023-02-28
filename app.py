@@ -1,16 +1,18 @@
 from flask import Flask, render_template, request, make_response, redirect, url_for
-from Utils import database as db
+from werkzeug.utils import secure_filename
+from Utils import Database, User
 from hashlib import sha256
 from argon2 import argon2_hash
 from json import load
 from datetime import datetime
-from os import getcwd, path
+from os import getcwd, path, mkdir
 
 
 def salt_password(passwordtohash, user_name, new_account=False):
     try:
         if not new_account:
-            data = database.select('''SELECT salt FROM cantina_administration.user WHERE user_name=%s''', (user_name,), 1)
+            data = database.select('''SELECT salt FROM cantina_administration.user WHERE user_name=%s''',
+                                   (user_name,), 1)
             passw = sha256(argon2_hash(passwordtohash, data[0])).hexdigest().encode()
             return passw
         else:
@@ -31,13 +33,14 @@ def make_log(action_name, user_ip, user_token, log_level, argument=None, content
         log_level) VALUES (%s, %s, %s,%s,%s)''', (str(action_name), str(user_ip), str(user_token), argument, log_level))
 
 
+dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
 with open(path.abspath(getcwd()) + "/config.json") as conf_file:
     config_data = load(conf_file)
 
-database = db.DataBase(user=config_data['database'][0]['database_username'],
-                       password=config_data['database'][0]['database_password'],
-                       host="localhost", port=3306)
+database = Database.DataBase(user=config_data['database'][0]['database_username'],
+                             password=config_data['database'][0]['database_password'],
+                             host="localhost", port=3306)
 database.connection()
 database.create_table("CREATE TABLE IF NOT EXISTS cantina_administration.user(id INT PRIMARY KEY NOT NULL "
                       "AUTO_INCREMENT, token TEXT,  user_name TEXT, salt TEXT, password TEXT, admin BOOL, "
@@ -108,6 +111,31 @@ def server(server_id=None):
         user_permission = database.select('SELECT admin FROM cantina_administration.user WHERE token=%s', (user_token,),
                                           1)
         return render_template('all_server.html', data=data, user_permission=user_permission)
+
+
+@app.route('/server/create', methods=['POST', 'GET'])
+def create_server(alert=False):
+    user_token = request.cookies.get('userID')
+    if not user_token:
+        return redirect(url_for('login'))
+
+    if not User.is_user_admin(database, user_token):
+        return redirect(url_for('server'))
+
+    if request.method == 'GET':
+        return render_template('create_server.html', alert=alert)
+    elif request.method == 'POST':
+        if not request.form['server-name'] or not request.form['server-cmd']:
+            return redirect(url_for('create_server', alert=True))
+
+        server_name = request.form['server-name']
+        server_cmd = request.form['server-cmd']
+        server_path = dir_path+secure_filename(server_name)
+
+        mkdir(server_path)
+        database.insert("""INSERT INTO cantina_server_manager.server(name, owner_token, run_command, path) VALUES 
+        (%s, %s, %s, %s)""", (server_name, request.cookies.get('userID'), server_cmd, server_path))
+        return redirect(url_for('server'))
 
 
 if __name__ == '__main__':

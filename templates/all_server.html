@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="has-text-centered">
-        <h1 class="is-size-1"><a href="">Cantina</a></h1><br>
+        <h1 class="is-size-1"><a href="{{ url_for('home') }}">Cantina</a></h1><br>
     </div>
     <div class="is-centered">
         {% if user_permission[0] %}
-            <button class="button is-primary" onclick="window.location.href=''">
+            <button class="button is-primary" onclick="window.location.href='{{ url_for('create_server') }}'">
                 <span class="icon is-normal" >
                     <i><img src="" alt="A MODIFIER"/></i>
                 </span>
