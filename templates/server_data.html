@@ -5,15 +5,31 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cantina - Server</title>
+    <title>Cantina - Admin User Manager</title>
 </head>
 <body>
-    <ul>
-        <li>ID: {{ data[0] }}</li>
-        <li>Nom: {{ data[1] }}</li>
-        <li>Token du dirigeant: {{ data[2] }}</li>
-        <li>Commande à executer: {{ data[3] }}</li>
-        <li>Dossier où executer: {{ data[4] }}</li>
-    </ul>
+    <div class="has-text-centered">
+        <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
+    </div>
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+            <tr>
+                <th class="is-size-5">ID</th>
+                <th class="is-size-5">Nom</th>
+                <th class="is-size-5">Propriétaire</th>
+                <th class="is-size-5">Commande à executer</th>
+                <th class="is-size-5">Dossier où executer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ data[0] }}</td>
+                <td>{{ data[1] }}</td>
+                <td>{{ data[2] }}</td>
+                <td>{{ data[3] }}</td>
+                <td>{{ data[4] }}</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
