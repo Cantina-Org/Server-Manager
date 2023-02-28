@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, make_response, redirect, url_for
-from Utils import database as db, user
+from Utils import Database, User
 from hashlib import sha256
 from argon2 import argon2_hash
 from json import load
@@ -10,7 +10,8 @@ from os import getcwd, path
 def salt_password(passwordtohash, user_name, new_account=False):
     try:
         if not new_account:
-            data = database.select('''SELECT salt FROM cantina_administration.user WHERE user_name=%s''', (user_name,), 1)
+            data = database.select('''SELECT salt FROM cantina_administration.user WHERE user_name=%s''',
+                                   (user_name,), 1)
             passw = sha256(argon2_hash(passwordtohash, data[0])).hexdigest().encode()
             return passw
         else:
@@ -35,9 +36,9 @@ app = Flask(__name__)
 with open(path.abspath(getcwd()) + "/config.json") as conf_file:
     config_data = load(conf_file)
 
-database = db.DataBase(user=config_data['database'][0]['database_username'],
-                       password=config_data['database'][0]['database_password'],
-                       host="localhost", port=3306)
+database = Database.DataBase(user=config_data['database'][0]['database_username'],
+                             password=config_data['database'][0]['database_password'],
+                             host="localhost", port=3306)
 database.connection()
 database.create_table("CREATE TABLE IF NOT EXISTS cantina_administration.user(id INT PRIMARY KEY NOT NULL "
                       "AUTO_INCREMENT, token TEXT,  user_name TEXT, salt TEXT, password TEXT, admin BOOL, "
@@ -116,7 +117,7 @@ def create_server():
     if not user_token:
         return redirect(url_for('login'))
 
-    if not user.is_user_admin(database, user_token):
+    if not User.is_user_admin(database, user_token):
         return redirect(url_for('server'))
 
 
