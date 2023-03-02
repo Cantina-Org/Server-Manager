@@ -10,8 +10,11 @@
 <body>
     <div class="has-text-centered">
         <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
+        <button style="margin-left: 15px" class="button is-primary is-outlined" onclick="">Lancer le serveur</button>
+        <button style="margin-left: 15px" class="button is-link is-outlined" onclick="">Stopper le serveur</button>
+        <button style="margin-left: 15px" class="button is-danger is-outlined" onclick="">Tuer le serveur</button>
     </div>
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="margin-top: 30px">
         <thead>
             <tr>
                 <th class="is-size-5">ID</th>
