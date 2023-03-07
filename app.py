@@ -5,7 +5,7 @@ from hashlib import sha256
 from argon2 import argon2_hash
 from json import load
 from datetime import datetime
-from os import getcwd, path, mkdir
+from os import getcwd, path, mkdir, system
 
 
 def salt_password(passwordtohash, user_name, new_account=False):
@@ -34,6 +34,7 @@ def make_log(action_name, user_ip, user_token, log_level, argument=None, content
 
 
 dir_path = path.abspath(getcwd()) + '/server/'
+log_path = path.abspath(getcwd()) + '/Logs/'
 app = Flask(__name__)
 with open(path.abspath(getcwd()) + "/config.json") as conf_file:
     config_data = load(conf_file)
@@ -111,6 +112,20 @@ def server(server_id=None):
         user_permission = database.select('SELECT admin FROM cantina_administration.user WHERE token=%s', (user_token,),
                                           1)
         return render_template('all_server.html', data=data, user_permission=user_permission)
+
+
+@app.route('/server/<server_id>/run')
+def run_server(server_id=None):
+    user_token = request.cookies.get('userID')
+    date = str(datetime.now())
+    if not user_token:
+        return redirect(url_for('login'))
+
+    if server_id:
+        data = database.select('SELECT run_command, path, name FROM cantina_server_manager.server WHERE id=%s',
+                               (server_id,), 1)
+        system('cd ' + data[1] + ' && ' + data[0] + ' > ' + log_path + secure_filename(date + '-' + data[2]))
+        return redirect(url_for('server', server_id=server_id))
 
 
 @app.route('/server/create', methods=['POST', 'GET'])
