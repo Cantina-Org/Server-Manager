@@ -43,15 +43,6 @@ database = Database.DataBase(user=config_data['database'][0]['database_username'
                              password=config_data['database'][0]['database_password'],
                              host="localhost", port=3306)
 database.connection()
-database.create_table("CREATE TABLE IF NOT EXISTS cantina_administration.user(id INT PRIMARY KEY NOT NULL "
-                      "AUTO_INCREMENT, token TEXT,  user_name TEXT, salt TEXT, password TEXT, admin BOOL, "
-                      "work_Dir TEXT, last_online TEXT)")
-database.create_table("CREATE TABLE IF NOT EXISTS cantina_administration.log(id INT PRIMARY KEY NOT NULL "
-                      "AUTO_INCREMENT, name TEXT,  user_ip text, user_token TEXT, argument TEXT, log_level INT, "
-                      "date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)")
-database.create_table("CREATE TABLE IF NOT EXISTS cantina_server_manager.server(id INT PRIMARY KEY NOT NULL "
-                      "AUTO_INCREMENT, name TEXT, owner_token TEXT, run_command TEXT, path TEXT)")
-
 
 @app.route('/')
 def home():
