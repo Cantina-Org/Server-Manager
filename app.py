@@ -2,26 +2,9 @@ from flask import Flask, render_template, request, make_response, redirect, url_
 from werkzeug.utils import secure_filename
 from Utils import Database, User
 from hashlib import sha256
-from argon2 import argon2_hash
 from json import load
 from datetime import datetime
 from os import getcwd, path, mkdir, system
-
-
-def salt_password(passwordtohash, user_name, new_account=False):
-    try:
-        if not new_account:
-            data = database.select('''SELECT salt FROM cantina_administration.user WHERE user_name=%s''',
-                                   (user_name,), 1)
-            passw = sha256(argon2_hash(passwordtohash, data[0])).hexdigest().encode()
-            return passw
-        else:
-            passw = sha256(argon2_hash(passwordtohash, user_name)).hexdigest().encode()
-            return passw
-
-    except AttributeError as e:
-        make_log('Error', request.remote_addr, request.cookies.get('userID'), 2, str(e))
-        return None
 
 
 def make_log(action_name, user_ip, user_token, log_level, argument=None, content=None):
@@ -43,14 +26,6 @@ database = Database.DataBase(user=config_data['database'][0]['database_username'
                              password=config_data['database'][0]['database_password'],
                              host="localhost", port=3306)
 database.connection()
-database.create_table("CREATE TABLE IF NOT EXISTS cantina_administration.user(id INT PRIMARY KEY NOT NULL "
-                      "AUTO_INCREMENT, token TEXT,  user_name TEXT, salt TEXT, password TEXT, admin BOOL, "
-                      "work_Dir TEXT, last_online TEXT)")
-database.create_table("CREATE TABLE IF NOT EXISTS cantina_administration.log(id INT PRIMARY KEY NOT NULL "
-                      "AUTO_INCREMENT, name TEXT,  user_ip text, user_token TEXT, argument TEXT, log_level INT, "
-                      "date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)")
-database.create_table("CREATE TABLE IF NOT EXISTS cantina_server_manager.server(id INT PRIMARY KEY NOT NULL "
-                      "AUTO_INCREMENT, name TEXT, owner_token TEXT, run_command TEXT, path TEXT)")
 
 
 @app.route('/')
@@ -72,7 +47,7 @@ def login():
         passwd = request.form['passwd']
 
         row = database.select(f'''SELECT user_name, password, token FROM cantina_administration.user 
-        WHERE password = %s AND user_name = %s''', (salt_password(passwd, user), user), 1)
+        WHERE password = %s AND user_name = %s''', (Null, user), 1)
 
         try:
             make_log('login', request.remote_addr, row[2], 1)
