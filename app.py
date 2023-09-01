@@ -1,23 +1,13 @@
 from flask import Flask, render_template, request, make_response, redirect, url_for
 from werkzeug.utils import secure_filename
-from Utils import Database, User
-from hashlib import sha256
-from json import load
+from Utils import Database
 from datetime import datetime
 from os import getcwd, path, mkdir, system
+from json import load
 
-
-def make_log(action_name, user_ip, user_token, log_level, argument=None, content=None):
-    if content:
-        database.insert('''INSERT INTO cantina_administration.log(name, user_ip, user_token, argument, 
-        log_level) VALUES (%s, %s, %s,%s,%s)''', (str(action_name), str(user_ip), str(content), argument, log_level))
-    else:
-        database.insert('''INSERT INTO cantina_administration.log(name, user_ip, user_token, argument, 
-        log_level) VALUES (%s, %s, %s,%s,%s)''', (str(action_name), str(user_ip), str(user_token), argument, log_level))
-
+from Cogs.login import login_cogs
 
 dir_path = path.abspath(getcwd()) + '/server/'
-log_path = path.abspath(getcwd()) + '/Logs/'
 app = Flask(__name__)
 with open(path.abspath(getcwd()) + "/config.json") as conf_file:
     config_data = load(conf_file)
@@ -33,7 +23,7 @@ def home():
     if not request.cookies.get('token'):
         return redirect(url_for('login'))
     data = database.select('''SELECT user_name, admin FROM cantina_administration.user WHERE token = %s''',
-                           (request.cookies.get('userID'),), 1)
+                           (request.cookies.get('token'),), 1)
     try:
         return render_template('home.html', cur=data)
     except IndexError:
@@ -42,40 +32,13 @@ def home():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    if request.method == 'POST':
-        user = request.form['nm']
-        passwd = request.form['passwd']
-
-        row = database.select(f'''SELECT user_name, password, token FROM cantina_administration.user 
-        WHERE password = %s AND user_name = %s''', (Null, user), 1)
-
-        try:
-            make_log('login', request.remote_addr, row[2], 1)
-            resp = make_response(redirect(url_for('home')))
-            resp.set_cookie('userID', row[2])
-            database.insert(f'''UPDATE cantina_administration.user SET last_online=%s WHERE token=%s''',
-                            (datetime.now(), row[2]))
-            return resp
-        except Exception as e:
-            make_log('Error', request.remote_addr, request.cookies.get('userID'), 2, str(e))
-            return redirect(url_for("home"))
-
-    elif request.method == 'GET':
-        return render_template('login.html')
-
-
-@app.route('/logout', methods=['POST', 'GET'])
-def logout():
-    make_log('logout', request.remote_addr, request.cookies.get('userID'), 1)
-    resp = make_response(redirect(url_for('home')))
-    resp.set_cookie('userID', '', expires=0)
-    return resp
+    return login_cogs(request, database)
 
 
 @app.route('/server/<server_id>')
 @app.route('/server')
 def server(server_id=None):
-    user_token = request.cookies.get('userID')
+    user_token = request.cookies.get('token')
     if not user_token:
         return redirect(url_for('login'))
 
@@ -91,7 +54,7 @@ def server(server_id=None):
 
 @app.route('/server/<server_id>/run')
 def run_server(server_id=None):
-    user_token = request.cookies.get('userID')
+    user_token = request.cookies.get('token')
     date = str(datetime.now())
     if not user_token:
         return redirect(url_for('login'))
@@ -99,18 +62,15 @@ def run_server(server_id=None):
     if server_id:
         data = database.select('SELECT run_command, path, name FROM cantina_server_manager.server WHERE id=%s',
                                (server_id,), 1)
-        system('cd ' + data[1] + ' && ' + data[0] + ' > ' + log_path + secure_filename(date + '-' + data[2]))
+        # system('cd ' + data[1] + ' && ' + data[0] + ' > ' + log_path + secure_filename(date + '-' + data[2]))
         return redirect(url_for('server', server_id=server_id))
 
 
 @app.route('/server/create', methods=['POST', 'GET'])
 def create_server(alert=False):
-    user_token = request.cookies.get('userID')
+    user_token = request.cookies.get('token')
     if not user_token:
         return redirect(url_for('login'))
-
-    if not User.is_user_admin(database, user_token):
-        return redirect(url_for('server'))
 
     if request.method == 'GET':
         return render_template('create_server.html', alert=alert)
@@ -123,10 +83,11 @@ def create_server(alert=False):
         server_path = dir_path+secure_filename(server_name)
 
         mkdir(server_path)
-        database.insert("""INSERT INTO cantina_server_manager.server(name, owner_token, run_command, path) VALUES 
-        (%s, %s, %s, %s)""", (server_name, request.cookies.get('userID'), server_cmd, server_path))
+        database.insert("""INSERT INTO cantina_server_manager.server(server_name, owner_token, server_run_command,
+         server_path) VALUES (%s, %s, %s, %s)""", (server_name, request.cookies.get('token'), server_cmd,
+                                                   server_path))
         return redirect(url_for('server'))
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=config_data["port"])
