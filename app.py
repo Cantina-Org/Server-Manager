@@ -1,6 +1,5 @@
-from flask import Flask, request, redirect, url_for
+from flask import Flask
 from Utils import Database
-from datetime import datetime
 from os import getcwd, path
 from json import load
 
@@ -8,6 +7,7 @@ from Cogs.login import login_cogs
 from Cogs.home import home_cogs
 from Cogs.show_server import show_server_cogs
 from Cogs.create_server import create_server_cogs
+from Cogs.run_server import run_server_cogs
 
 dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
@@ -38,16 +38,7 @@ def server(server_id=None):
 
 @app.route('/server/<server_id>/run')
 def run_server(server_id=None):
-    user_token = request.cookies.get('token')
-    date = str(datetime.now())
-    if not user_token:
-        return redirect(url_for('login'))
-
-    if server_id:
-        data = database.select('SELECT run_command, path, name FROM cantina_server_manager.server WHERE id=%s',
-                               (server_id,), 1)
-        # system('cd ' + data[1] + ' && ' + data[0] + ' > ' + log_path + secure_filename(date + '-' + data[2]))
-        return redirect(url_for('server', server_id=server_id))
+    return run_server_cogs(database, server_id)
 
 
 @app.route('/server/create', methods=['POST', 'GET'])
