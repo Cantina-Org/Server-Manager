@@ -1,13 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for
-from werkzeug.utils import secure_filename
+from flask import Flask, request, redirect, url_for
 from Utils import Database
 from datetime import datetime
-from os import getcwd, path, mkdir
+from os import getcwd, path
 from json import load
 
 from Cogs.login import login_cogs
 from Cogs.home import home_cogs
 from Cogs.show_server import show_server_cogs
+from Cogs.create_server import create_server_cogs
 
 dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
@@ -52,25 +52,7 @@ def run_server(server_id=None):
 
 @app.route('/server/create', methods=['POST', 'GET'])
 def create_server(alert=False):
-    user_token = request.cookies.get('token')
-    if not user_token:
-        return redirect(url_for('login'))
-
-    if request.method == 'GET':
-        return render_template('create_server.html', alert=alert)
-    elif request.method == 'POST':
-        if not request.form['server-name'] or not request.form['server-cmd']:
-            return redirect(url_for('create_server', alert=True))
-
-        server_name = request.form['server-name']
-        server_cmd = request.form['server-cmd']
-        server_path = dir_path+secure_filename(server_name)
-
-        mkdir(server_path)
-        database.insert("""INSERT INTO cantina_server_manager.server(server_name, owner_token, server_run_command,
-         server_path) VALUES (%s, %s, %s, %s)""", (server_name, request.cookies.get('token'), server_cmd,
-                                                   server_path))
-        return redirect(url_for('server'))
+    return create_server_cogs(database, alert, dir_path)
 
 
 if __name__ == '__main__':
