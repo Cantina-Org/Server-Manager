@@ -2,11 +2,12 @@ from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from Utils import Database
 from datetime import datetime
-from os import getcwd, path, mkdir, system
+from os import getcwd, path, mkdir
 from json import load
 
 from Cogs.login import login_cogs
 from Cogs.home import home_cogs
+from Cogs.show_server import show_server_cogs
 
 dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
@@ -32,18 +33,7 @@ def login():
 @app.route('/server/<server_id>')
 @app.route('/server')
 def server(server_id=None):
-    user_token = request.cookies.get('token')
-    if not user_token:
-        return redirect(url_for('login'))
-
-    if server_id:
-        data = database.select('SELECT * FROM cantina_server_manager.server WHERE id=%s', (server_id,), 1)
-        return render_template('server_data.html', data=data)
-    else:
-        data = database.select('SELECT * FROM cantina_server_manager.server')
-        user_permission = database.select('SELECT admin FROM cantina_administration.user WHERE token=%s', (user_token,),
-                                          1)
-        return render_template('all_server.html', data=data, user_permission=user_permission)
+    return show_server_cogs(database, server_id)
 
 
 @app.route('/server/<server_id>/run')
