@@ -14,12 +14,9 @@ def create_server_cogs(database, alert, dir_path):
         if not request.form['server-name'] or not request.form['server-cmd']:
             return redirect(url_for('create_server', alert=True))
 
-        server_name = request.form['server-name']
-        server_cmd = request.form['server-cmd']
-        server_path = dir_path + secure_filename(server_name)
-
-        mkdir(server_path)
-        database.insert("""INSERT INTO cantina_server_manager.server(server_name, owner_token, server_run_command,
-             server_path) VALUES (%s, %s, %s, %s)""", (server_name, request.cookies.get('token'), server_cmd,
-                                                       server_path))
+        mkdir(dir_path + secure_filename(request.form['server-name']))
+        database.insert("""INSERT INTO cantina_server_manager.server(owner_token, server_name, server_token, 
+        server_run_command, server_path, group_acces) VALUES (%s, %s, %s, %s, %s, %s)""",
+                        (request.cookies.get("token"), request.form['server-name'], "0", request.form['server-cmd'],
+                         dir_path + secure_filename(request.form['server-name']), 0))
         return redirect(url_for('server'))

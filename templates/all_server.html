@@ -31,7 +31,7 @@
             {% for i in data%}
                 <tr>
                     <td><a href="{{ url_for('server', server_id=i[0]) }}" style="text-decoration: None;">{{ i[0] }}</a></td>
-                    <td><a href="{{ url_for('server', server_id=i[0]) }}" style="text-decoration: None;">{{ i[1] }}</a></td>
+                    <td><a href="{{ url_for('server', server_id=i[0]) }}" style="text-decoration: None;">{{ i[2] }}</a></td>
                 </tr>
             {% endfor %}
         </tbody>
