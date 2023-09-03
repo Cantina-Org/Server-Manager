@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from Utils import Database
 from datetime import datetime
@@ -6,6 +6,7 @@ from os import getcwd, path, mkdir, system
 from json import load
 
 from Cogs.login import login_cogs
+from Cogs.home import home_cogs
 
 dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
@@ -20,19 +21,12 @@ database.connection()
 
 @app.route('/')
 def home():
-    if not request.cookies.get('token'):
-        return redirect(url_for('login'))
-    data = database.select('''SELECT user_name, admin FROM cantina_administration.user WHERE token = %s''',
-                           (request.cookies.get('token'),), 1)
-    try:
-        return render_template('home.html', cur=data)
-    except IndexError:
-        return redirect(url_for('login'))
+    return home_cogs(database)
 
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    return login_cogs(request, database)
+    return login_cogs(database)
 
 
 @app.route('/server/<server_id>')
