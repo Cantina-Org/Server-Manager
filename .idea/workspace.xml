@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="Ajout d'une page de configuration pour les admins" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2UnaSCPn18bhB0CDDtQU2cAfDbH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flask server.Flask (app.py).executor": "Run",
+    "Python.Server-Manager.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/mathieu/Code/Cantina/Server-Manager/app.py",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Flask (app.py)" type="Python.FlaskServer" nameIsGenerated="true">
+      <option name="additionalOptions" value="--port=3006" />
+      <option name="flaskDebug" value="true" />
+      <module name="Server-Manager" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="/usr/bin/python3.11" />
+      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-e8b2dc97e1a4-5ac6f1e12630-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11555.5" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="" />
+      <created>1693577795794</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693577795794</updated>
+      <workItem from="1693577796937" duration="451000" />
+      <workItem from="1693578251387" duration="7353000" />
+      <workItem from="1693750116858" duration="4490000" />
+      <workItem from="1694017262249" duration="138000" />
+      <workItem from="1694939899442" duration="839000" />
+      <workItem from="1695149369757" duration="598000" />
+      <workItem from="1695217204234" duration="29000" />
+      <workItem from="1695660884835" duration="51000" />
+      <workItem from="1697994063615" duration="1072000" />
+      <workItem from="1698082953283" duration="26000" />
+      <workItem from="1698082995990" duration="671000" />
+      <workItem from="1698252867244" duration="711000" />
+      <workItem from="1698949336318" duration="234000" />
+      <workItem from="1698949808128" duration="6000" />
+      <workItem from="1699378082001" duration="816000" />
+      <workItem from="1699379946786" duration="108000" />
+      <workItem from="1699380253517" duration="2589000" />
+      <workItem from="1699463243639" duration="537000" />
+      <workItem from="1699463799839" duration="1225000" />
+    </task>
+    <task id="LOCAL-00001" summary="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py">
+      <option name="closed" value="true" />
+      <created>1693582094917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693582094917</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Suppression de l'image pour la creation de serveur dans all_server.html">
+      <option name="closed" value="true" />
+      <created>1693733048374</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693733048374</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Ajout du Cog home.py&#10;- Ajout du Cog login.py">
+      <option name="closed" value="true" />
+      <created>1693755013059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755013059</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- Ajout du Cog show_server.py">
+      <option name="closed" value="true" />
+      <created>1693755245039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755245039</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- Ajout du Cog create_server.py">
+      <option name="closed" value="true" />
+      <created>1693755506651</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755506651</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- Ajout du Cog run_server.py">
+      <option name="closed" value="true" />
+      <created>1693755691319</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755691319</updated>
+    </task>
+    <task id="LOCAL-00007" summary="- Mise en conformité avec la nouvelle base de données">
+      <option name="closed" value="true" />
+      <created>1693756248494</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693756248494</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Lancements des commandes &#10;mise a jours des noms de tables">
+      <option name="closed" value="true" />
+      <created>1699389045073</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699389045073</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Lancements des commandes &#10;mise a jours des noms de tables">
+      <option name="closed" value="true" />
+      <created>1699389096359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699389096359</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ajout d'une page de configuration pour les admins">
+      <option name="closed" value="true" />
+      <created>1699464965921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699464965921</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py" />
+    <MESSAGE value="Suppression de l'image pour la creation de serveur dans all_server.html" />
+    <MESSAGE value="- Ajout du Cog home.py&#10;- Ajout du Cog login.py" />
+    <MESSAGE value="- Ajout du Cog show_server.py" />
+    <MESSAGE value="- Ajout du Cog create_server.py" />
+    <MESSAGE value="- Ajout du Cog run_server.py" />
+    <MESSAGE value="- Mise en conformité avec la nouvelle base de données" />
+    <MESSAGE value="Lancements des commandes &#10;mise a jours des noms de tables" />
+    <MESSAGE value="Ajout d'une page de configuration pour les admins" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'une page de configuration pour les admins" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Server_Manager$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1695660901959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>

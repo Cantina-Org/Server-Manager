@@ -15,7 +15,7 @@ def create_server_cogs(database, alert, dir_path):
             return redirect(url_for('create_server', alert=True))
 
         mkdir(dir_path + secure_filename(request.form['server-name']))
-        database.insert("""INSERT INTO cantina_server_manager.server(owner_token, server_name, server_token, 
+        database.insert("""INSERT INTO cantina_server_manager.server(owner_token, name, server_token, 
         server_run_command, server_path, group_acces) VALUES (%s, %s, %s, %s, %s, %s)""",
                         (request.cookies.get("token"), request.form['server-name'], "0", request.form['server-cmd'],
                          dir_path + secure_filename(request.form['server-name']), 0))
