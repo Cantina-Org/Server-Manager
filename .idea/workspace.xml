@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="Ajout d'une page de configuration pour les admins" />
+    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="Ajout d'une page de configuration pour les admins">
+      <change beforePath="$PROJECT_DIR$/.idea/cantina-server-manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cantina-server-manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +35,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,15 +64,15 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Django/Jinja2 Template",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Flask server.Flask (app.py)">
-    <configuration name="Flask (app.py)" type="Python.FlaskServer" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Server-Manager" type="Python.FlaskServer">
       <option name="additionalOptions" value="--port=3006" />
       <option name="flaskDebug" value="true" />
-      <module name="Server-Manager" />
+      <module name="cantina-server-manager" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
       <option name="targetType" value="PATH" />
       <option name="ENV_FILES" value="" />
@@ -74,22 +80,6 @@
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="/usr/bin/python3.11" />
       <option name="SDK_NAME" value="Python 3.11" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Server-Manager" type="Python.FlaskServer">
-      <module name="Server-Manager" />
-      <option name="target" value="$PROJECT_DIR$/app.py" />
-      <option name="targetType" value="PATH" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -136,7 +126,8 @@
       <workItem from="1699380253517" duration="2589000" />
       <workItem from="1699463243639" duration="537000" />
       <workItem from="1699463799839" duration="1225000" />
-      <workItem from="1699465029801" duration="1053000" />
+      <workItem from="1699465029801" duration="1717000" />
+      <workItem from="1699526217569" duration="483000" />
     </task>
     <task id="LOCAL-00001" summary="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py">
       <option name="closed" value="true" />
@@ -234,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699465134160</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Ajout d'une page de configuration pour les admins">
+      <option name="closed" value="true" />
+      <created>1699475786398</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699475786398</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
