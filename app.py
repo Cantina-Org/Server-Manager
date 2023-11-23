@@ -2,7 +2,6 @@ from flask import Flask
 from Utils import Database
 from os import getcwd, path
 from json import load
-
 from Cogs.login import login_cogs
 from Cogs.home import home_cogs
 from Cogs.show_server import show_server_cogs
