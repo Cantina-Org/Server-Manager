@@ -6,24 +6,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bulma.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cantina - Create Server</title>
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        if(urlParams.get('alert')){
-            alert("Merci de remplir tout les champs requis!")
-        }
-    </script>
+    <script type="application/javascript" src="{{ url_for('static', filename='create_server.js') }}"></script>
 </head>
 <body>
     <div class="has-text-centered">
         <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
         <div class="columns is-centered is-vcentered">
             <form action="{{ url_for('create_server') }}" method="post">
-                <label class="is-size-4">Nom du serveur: </label>
-                <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer le nom du serveur" name="server-name" required></label><br>
-                <label class="is-size-4">La commande de lancement: </label>
-                <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
-                <button class="button is-primary" type="submit">Créer le serveur</button>
+                <div id="server_show_name" style="display: block; margin-top: 1em">
+                    <label class="is-size-4">Nom d'affichage du serveur: </label>
+                    <label><input style="margin-top: 1em; margin-bottom: 2em" class="input" type="text" placeholder="Entrer le nom du serveur" name="server-name" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('server_show_name', 'commande_name')">Étape suivante</button>
+                </div>
+                <div id="commande_name" style="display: none">
+                    <label class="is-size-4">La commande de lancement: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
+                </div>
+                <!--<button class="button is-primary" type="submit">Créer le serveur</button>-->
             </form>
         </div>
     </div>
