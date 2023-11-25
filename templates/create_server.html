@@ -13,18 +13,42 @@
         <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
         <div class="columns is-centered is-vcentered">
             <form action="{{ url_for('create_server') }}" method="post">
-                <div id="server_show_name" style="display: block; margin-top: 1em">
+                <div id="display_name" style="display: block; margin-top: 1em">
                     <label class="is-size-4">Nom d'affichage du serveur: </label>
                     <label><input style="margin-top: 1em; margin-bottom: 2em" class="input" type="text" placeholder="Entrer le nom du serveur" name="server-name" required></label><br>
-                    <button class="button is-primary" onclick="nextStep('server_show_name', 'commande_name')">Étape suivante</button>
+                    <button class="button is-primary" onclick="nextStep('display_name', 'command_to_execute')">Étape suivante</button>
+                </div>
+                <div id="command_to_execute" style="display: none">
+                    <label class="is-size-4">La commande de lancement: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('command_to_execute', '')">Étape suivante</button>
                 </div>
                 <div id="commande_name" style="display: none">
                     <label class="is-size-4">La commande de lancement: </label>
                     <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('commande_name', '')">Étape suivante</button>
+                </div>
+                <div id="git_repo" style="display: none">
+                    <label class="is-size-4">La commande de lancement: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('commande_name', '')">Étape suivante</button>
                 </div>
                 <!--<button class="button is-primary" type="submit">Créer le serveur</button>-->
             </form>
         </div>
+
+    </div>
+
+    <div id="alert-field-empty" class="modal">
+        <div class="modal-background" onclick="closeModal('alert-field-empty')"></div>
+        <div class="modal-content">
+            <article class="message is-danger">
+                <div class="message-body">
+                    Attention ! <br> Merci de remplir tous les champs requis !
+                </div>
+            </article>
+        </div>
+        <button class="modal-close is-large" onclick="closeModal('alert-field-empty')"></button>
     </div>
 </body>
 </html>
