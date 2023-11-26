@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="Modification du front création de server &#10;Commande de création de la table de la base de donnée.">
+    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="Mise en place d'un step by step">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/create_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/create_server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_server.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="8772" />
+    <option name="totalTimeSeconds" value="10633" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -85,7 +84,7 @@
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="/usr/bin/python3.11" />
       <option name="SDK_NAME" value="Python 3.11" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -140,7 +139,8 @@
       <workItem from="1700760421170" duration="2804000" />
       <workItem from="1700819035677" duration="1628000" />
       <workItem from="1700850705657" duration="923000" />
-      <workItem from="1700917498358" duration="10690000" />
+      <workItem from="1700917498358" duration="10982000" />
+      <workItem from="1701005539644" duration="2241000" />
     </task>
     <task id="LOCAL-00001" summary="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py">
       <option name="closed" value="true" />
@@ -294,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700923665856</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Mise en place d'un step by step">
+      <option name="closed" value="true" />
+      <created>1700933641178</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700933641178</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,10 +361,11 @@
     <MESSAGE value="Clarification du projet via le README.md" />
     <MESSAGE value="Définition de la table de server dans README.md" />
     <MESSAGE value="Modification du front création de server &#10;Commande de création de la table de la base de donnée." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification du front création de server &#10;Commande de création de la table de la base de donnée." />
+    <MESSAGE value="Mise en place d'un step by step" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mise en place d'un step by step" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Server_Manager$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1695660901959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Server_Manager$Server_Manager.coverage" NAME="Server-Manager Coverage Results" MODIFIED="1700921947440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Server_Manager$Server_Manager.coverage" NAME="Server-Manager Coverage Results" MODIFIED="1701016375860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

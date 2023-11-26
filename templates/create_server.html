@@ -12,26 +12,26 @@
     <div class="has-text-centered">
         <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
         <div class="columns is-centered is-vcentered">
-            <form action="{{ url_for('create_server') }}" method="post">
+            <form action="" method="post"> <!-- {{ url_for('create_server') }} -->
                 <div id="display_name" style="display: block; margin-top: 1em">
-                    <label class="is-size-4">Nom d'affichage du serveur: </label>
-                    <label><input style="margin-top: 1em; margin-bottom: 2em" class="input" type="text" placeholder="Entrer le nom du serveur" name="server-name" required></label><br>
-                    <button class="button is-primary" onclick="nextStep('display_name', 'command_to_execute')">Étape suivante</button>
+                    <label class="is-size-4">Le nom d'affichage du serveur: </label>
+                    <label><input style="margin-top: 1em; margin-bottom: 2em" class="input" type="text" placeholder="Entrer le nom du serveur" name="display-name" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('display_name', 'code_name')">Étape suivante</button>
                 </div>
-                <div id="command_to_execute" style="display: none">
-                    <label class="is-size-4">La commande de lancement: </label>
-                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
-                    <button class="button is-primary" onclick="nextStep('command_to_execute', '')">Étape suivante</button>
+                <div id="code_name" style="display: none">
+                    <label class="is-size-4">Le nom du 'simplifié' du programme: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer le nom du 'simplifié' du programme" name="server-name" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('code_name', 'commande_name')">Étape suivante</button>
                 </div>
                 <div id="commande_name" style="display: none">
                     <label class="is-size-4">La commande de lancement: </label>
                     <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
-                    <button class="button is-primary" onclick="nextStep('commande_name', '')">Étape suivante</button>
+                    <button class="button is-primary" onclick="nextStep('commande_name', 'git_repo')">Étape suivante</button>
                 </div>
                 <div id="git_repo" style="display: none">
-                    <label class="is-size-4">La commande de lancement: </label>
-                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
-                    <button class="button is-primary" onclick="nextStep('commande_name', '')">Étape suivante</button>
+                    <label class="is-size-4">URL dépot GitHub: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer l'URL du dépot GitHub'" name="git-repo"></label><br>
+                    <button class="button is-primary" onclick="nextStep('git_repo', '')">Étape suivante</button>
                 </div>
                 <!--<button class="button is-primary" type="submit">Créer le serveur</button>-->
             </form>
