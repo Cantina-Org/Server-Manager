@@ -1,6 +1,7 @@
 from flask import request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 from os import mkdir
+from pymysql.err import OperationalError
 
 
 def create_server_cogs(database, alert, dir_path):
@@ -21,8 +22,7 @@ def create_server_cogs(database, alert, dir_path):
                         (request.cookies.get("token"), request.form['server-name'], "0", request.form['server-cmd'],
                          dir_path + secure_filename(request.form['server-name']), 0))
             return redirect(url_for('server'))
-        except Exception as e:
-            if e == FileExistsError:
-                return redirect(url_for('create_server', alert='file-existe'))
-            elif e[0] == 1054:
-                return redirect(url_for('create_server', alert='db-error'))
+        except FileExistsError:
+            return redirect(url_for('create_server', alert='file-existe'))
+        except OperationalError:
+            return redirect(url_for('create_server', alert='db-prob'))
