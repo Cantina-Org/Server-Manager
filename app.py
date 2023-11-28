@@ -2,6 +2,7 @@ from flask import Flask
 from Utils import Database
 from os import getcwd, path
 from json import load
+from flask_sock import Sock
 from Cogs.login import login_cogs
 from Cogs.home import home_cogs
 from Cogs.show_server import show_server_cogs
@@ -10,6 +11,7 @@ from Cogs.run_server import run_server_cogs
 
 dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
+sock = Sock(app)
 with open(path.abspath(getcwd()) + "/config.json") as conf_file:
     config_data = load(conf_file)
 
@@ -30,14 +32,17 @@ def login():
 
 
 @app.route('/server/<server_id>')
+@app.route('/server/')
 @app.route('/server')
 def server(server_id=None):
     return show_server_cogs(database, server_id)
 
 
-@app.route('/server/<server_id>/run')
-def run_server(server_id=None):
-    return run_server_cogs(database, server_id)
+@sock.route('/server/ws')
+def run_server(sock):
+    while True:
+        data = sock.receive()
+        sock.send(data)
 
 
 @app.route('/server/create', methods=['POST', 'GET'])
