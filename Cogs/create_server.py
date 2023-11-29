@@ -17,12 +17,13 @@ def create_server_cogs(database, alert, dir_path):
 
         try:
             mkdir(dir_path + secure_filename(request.form['server-name']))
-            database.insert("""INSERT INTO cantina_server_manager.server(owner_token, name, server_token, 
-            server_run_command, server_path, group_acces) VALUES (%s, %s, %s, %s, %s, %s)""",
-                        (request.cookies.get("token"), request.form['server-name'], "0", request.form['server-cmd'],
-                         dir_path + secure_filename(request.form['server-name']), 0))
+            database.insert("""INSERT INTO cantina_server_manager.server(name, local_name, owner_name, permission) 
+            VALUES (%s, %s, %s, %s)""",
+                            (request.form['server-name'])))
             return redirect(url_for('server'))
-        except FileExistsError:
+        except FileExistsError as e:
+            print(e)
             return redirect(url_for('create_server', alert='file-existe'))
-        except OperationalError:
+        except OperationalError as e:
+            print(e)
             return redirect(url_for('create_server', alert='db-prob'))
