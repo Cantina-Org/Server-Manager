@@ -1,5 +1,7 @@
+let isLastItemShowed = false;
+
 // Fonction verifiant si l'input est rempli pour passer à l'étape d'après.
-function nextStep(currentDiv, nextDiv){
+function nextStep(currentDiv, nextDiv, isThisTheLastItem = false){
     let divToHide = document.getElementById(currentDiv);
     let divToShow = document.getElementById(nextDiv);
 
@@ -15,6 +17,10 @@ function nextStep(currentDiv, nextDiv){
 
     divToHide.style.display = "none"; // Cacher le div de l'étape actuelle
     divToShow.style.display = "block"; // Afficher le div de l'étape suivante
+
+    if(isThisTheLastItem){
+        isLastItemShowed = true;
+    }
 }
 
 function isBoxChecked(checkBoxID, textIdToShow) {
@@ -32,3 +38,19 @@ function isBoxChecked(checkBoxID, textIdToShow) {
 function closeModal(modalToClose){
     document.getElementById("alert-field-empty").classList.remove('is-active'); // Suppression de la pop-up
 }
+
+
+let formulaire = document.getElementById('formCreateServer');
+formulaire.addEventListener('submit', function(event) {
+    // Empêche le comportement par défaut du formulaire (la soumission)
+    event.preventDefault();
+
+    alert(event);
+
+    if (isLastItemShowed) {
+        // Soumettre le formulaire
+        this.submit();
+    } else {
+        // Autre action, le formulaire ne sera pas soumis
+    }
+});

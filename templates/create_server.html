@@ -12,7 +12,7 @@
     <div class="has-text-centered">
         <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
         <div class="columns is-centered is-vcentered">
-            <form action="" method="post"> <!-- {{ url_for('create_server') }} -->
+            <form action="" method="post" id="formCreateServer"> <!-- {{ url_for('create_server') }} -->
                 <div id="display_name" style="display: block; margin-top: 1em">
                     <label class="is-size-4">Le nom d'affichage du serveur: </label>
                     <label><input style="margin-top: 1em; margin-bottom: 2em" class="input" type="text" placeholder="Entrer le nom du serveur" name="display-name" required></label><br>
@@ -26,12 +26,12 @@
                 <div id="commande_name" style="display: block">
                     <label class="is-size-4">La commande de lancement: </label>
                     <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
-                    <button class="button is-primary" onclick="nextStep('code_name', 'commande_name')">Étape suivante</button>
+                    <button class="button is-primary" onclick="nextStep('commande_name', 'git_repo', true); ">Étape suivante</button>
                 </div>
                 <div id="git_repo" style="display: block">
                     <label class="is-size-4">URL dépot GitHub: </label>
                     <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer l'URL du dépot GitHub'" name="git-repo"></label><br>
-                    <!-- <button class="button is-primary" type="submit">Créer le serveur</button> -->
+                    <button class="button is-primary" type="submit">Créer le serveur</button>
                 </div>
             </form>
         </div>
