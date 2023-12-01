@@ -38,19 +38,3 @@ function isBoxChecked(checkBoxID, textIdToShow) {
 function closeModal(modalToClose){
     document.getElementById("alert-field-empty").classList.remove('is-active'); // Suppression de la pop-up
 }
-
-
-let formulaire = document.getElementById('formCreateServer');
-formulaire.addEventListener('submit', function(event) {
-    // Empêche le comportement par défaut du formulaire (la soumission)
-    event.preventDefault();
-
-    alert(event);
-
-    if (isLastItemShowed) {
-        // Soumettre le formulaire
-        this.submit();
-    } else {
-        // Autre action, le formulaire ne sera pas soumis
-    }
-});
