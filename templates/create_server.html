@@ -6,26 +6,71 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bulma.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cantina - Create Server</title>
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        if(urlParams.get('alert')){
-            alert("Merci de remplir tout les champs requis!")
-        }
-    </script>
+    <script type="application/javascript" src="{{ url_for('static', filename='create_server.js') }}"></script>
 </head>
 <body>
     <div class="has-text-centered">
         <h1 class="is-size-1"><a href="{{ url_for('server') }}">Cantina</a></h1><br>
         <div class="columns is-centered is-vcentered">
-            <form action="{{ url_for('create_server') }}" method="post">
-                <label class="is-size-4">Nom du serveur: </label>
-                <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer le nom du serveur" name="server-name" required></label><br>
-                <label class="is-size-4">La commande de lancement: </label>
-                <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
-                <button class="button is-primary" type="submit">Créer le serveur</button>
+            <form action="" method="post" id="formCreateServer"> <!-- {{ url_for('create_server') }} -->
+                <div id="display_name" style="display: block; margin-top: 1em">
+                    <label class="is-size-4">Le nom d'affichage du serveur: </label>
+                    <label><input style="margin-top: 1em; margin-bottom: 2em" class="input" type="text" placeholder="Entrer le nom du serveur" name="display-name" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('display_name', 'code_name')">Étape suivante</button>
+                </div>
+                <div id="code_name" style="display: block">
+                    <label class="is-size-4">Le nom du 'simplifié' du programme: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer le nom du 'simplifié' du programme" name="server-name" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('code_name', 'commande_name')">Étape suivante</button>
+                </div>
+                <div id="commande_name" style="display: block">
+                    <label class="is-size-4">La commande de lancement: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer la commande à éxecuter au lancement" name="server-cmd" required></label><br>
+                    <button class="button is-primary" onclick="nextStep('commande_name', 'git_repo', true); ">Étape suivante</button>
+                </div>
+                <div id="git_repo" style="display: block">
+                    <label class="is-size-4">URL dépot GitHub: </label>
+                    <label><input style="margin-bottom: 1em" class="input" type="text" placeholder="Entrer l'URL du dépot GitHub'" name="git-repo"></label><br>
+                    <button class="button is-primary" type="submit">Créer le serveur</button>
+                </div>
             </form>
         </div>
+
+    </div>
+
+    <div id="alert-field-empty" class="modal">
+        <div class="modal-background" onclick="closeModal('alert-field-empty')"></div>
+        <div class="modal-content">
+            <article class="message is-danger">
+                <div class="message-body">
+                    Attention ! <br> Merci de remplir tous les champs requis !
+                </div>
+            </article>
+        </div>
+        <button class="modal-close is-large" onclick="closeModal('alert-field-empty')"></button>
+    </div>
+
+    <div id="alert-file-existe" class="modal">
+        <div class="modal-background" onclick="closeModal('alert-field-empty')"></div>
+        <div class="modal-content">
+            <article class="message is-danger">
+                <div class="message-body">
+                    Attention ! <br> Un programme s'appelle déjà comme ça !
+                </div>
+            </article>
+        </div>
+        <button class="modal-close is-large" onclick="closeModal('alert-field-empty')"></button>
+    </div>
+    <div id="alert-db-prob" class="modal">
+        <div class="modal-background" onclick="closeModal('alert-field-empty')"></div>
+        <div class="modal-content">
+            <article class="message is-danger">
+                <div class="message-body">
+                    Attention ! <br> Merci de remplir tous les champs requis !
+                </div>
+            </article>
+        </div>
+        <button class="modal-close is-large" onclick="closeModal('alert-field-empty')"></button>
     </div>
 </body>
 </html>

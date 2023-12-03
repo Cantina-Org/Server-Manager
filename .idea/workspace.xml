@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="NSM ça marche pas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DarkyenusTimeTracker">
+    <option name="totalTimeSeconds" value="19651" />
+    <option name="gitIntegration" value="true" />
+    <option name="naggedAbout" value="1" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2UnaSCPn18bhB0CDDtQU2cAfDbH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask server.Flask (app.py).executor&quot;: &quot;Run&quot;,
+    &quot;Flask server.Server-Manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Server-Manager.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mathieu/Code/Cantina/Server-Manager&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Server-Manager" type="Python.FlaskServer">
+      <option name="additionalOptions" value="--port=3006" />
+      <option name="flaskDebug" value="true" />
+      <module name="cantina-server-manager" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.11 (Server-Manager)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-d84064030637-9e8a10399a4a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.32" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="" />
+      <created>1693577795794</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693577795794</updated>
+      <workItem from="1693577796937" duration="451000" />
+      <workItem from="1693578251387" duration="7353000" />
+      <workItem from="1693750116858" duration="4490000" />
+      <workItem from="1694017262249" duration="138000" />
+      <workItem from="1694939899442" duration="839000" />
+      <workItem from="1695149369757" duration="598000" />
+      <workItem from="1695217204234" duration="29000" />
+      <workItem from="1695660884835" duration="51000" />
+      <workItem from="1697994063615" duration="1072000" />
+      <workItem from="1698082953283" duration="26000" />
+      <workItem from="1698082995990" duration="671000" />
+      <workItem from="1698252867244" duration="711000" />
+      <workItem from="1698949336318" duration="234000" />
+      <workItem from="1698949808128" duration="6000" />
+      <workItem from="1699378082001" duration="816000" />
+      <workItem from="1699379946786" duration="108000" />
+      <workItem from="1699380253517" duration="2589000" />
+      <workItem from="1699463243639" duration="537000" />
+      <workItem from="1699463799839" duration="1225000" />
+      <workItem from="1699465029801" duration="1717000" />
+      <workItem from="1699526217569" duration="1882000" />
+      <workItem from="1700737123808" duration="70000" />
+      <workItem from="1700737194891" duration="60000" />
+      <workItem from="1700737285462" duration="96000" />
+      <workItem from="1700737740403" duration="1296000" />
+      <workItem from="1700760421170" duration="2804000" />
+      <workItem from="1700819035677" duration="1628000" />
+      <workItem from="1700850705657" duration="923000" />
+      <workItem from="1700917498358" duration="10982000" />
+      <workItem from="1701005539644" duration="6250000" />
+      <workItem from="1701077773324" duration="1600000" />
+      <workItem from="1701084055474" duration="1571000" />
+      <workItem from="1701104506355" duration="2368000" />
+      <workItem from="1701193801372" duration="4595000" />
+      <workItem from="1701256360722" duration="642000" />
+      <workItem from="1701272523286" duration="3669000" />
+      <workItem from="1701366791214" duration="4560000" />
+      <workItem from="1701376757294" duration="82000" />
+    </task>
+    <task id="LOCAL-00001" summary="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py">
+      <option name="closed" value="true" />
+      <created>1693582094917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693582094917</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Suppression de l'image pour la creation de serveur dans all_server.html">
+      <option name="closed" value="true" />
+      <created>1693733048374</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693733048374</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Ajout du Cog home.py&#10;- Ajout du Cog login.py">
+      <option name="closed" value="true" />
+      <created>1693755013059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755013059</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- Ajout du Cog show_server.py">
+      <option name="closed" value="true" />
+      <created>1693755245039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755245039</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- Ajout du Cog create_server.py">
+      <option name="closed" value="true" />
+      <created>1693755506651</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755506651</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- Ajout du Cog run_server.py">
+      <option name="closed" value="true" />
+      <created>1693755691319</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693755691319</updated>
+    </task>
+    <task id="LOCAL-00007" summary="- Mise en conformité avec la nouvelle base de données">
+      <option name="closed" value="true" />
+      <created>1693756248494</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693756248494</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Lancements des commandes &#10;mise a jours des noms de tables">
+      <option name="closed" value="true" />
+      <created>1699389045073</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699389045073</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Lancements des commandes &#10;mise a jours des noms de tables">
+      <option name="closed" value="true" />
+      <created>1699389096359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699389096359</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ajout d'une page de configuration pour les admins">
+      <option name="closed" value="true" />
+      <created>1699464965921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699464965921</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Ajout d'une page de configuration pour les admins">
+      <option name="closed" value="true" />
+      <created>1699465101698</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699465101698</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ajout d'une page de configuration pour les admins">
+      <option name="closed" value="true" />
+      <created>1699465134160</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699465134160</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Ajout d'une page de configuration pour les admins">
+      <option name="closed" value="true" />
+      <created>1699475786398</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699475786398</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Suppressions de la partie admin qui vas être relocaliser">
+      <option name="closed" value="true" />
+      <created>1699526827786</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699526827787</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Suppressions de la partie admin qui vas être relocaliser">
+      <option name="closed" value="true" />
+      <created>1699526991232</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699526991232</updated>
+    </task>
+    <task id="LOCAL-00016" summary=".">
+      <option name="closed" value="true" />
+      <created>1700770421514</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700770421514</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Clarification du projet via le README.md">
+      <option name="closed" value="true" />
+      <created>1700823482269</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700823482269</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Définition de la table de server dans README.md">
+      <option name="closed" value="true" />
+      <created>1700851493174</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700851493174</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Modification du front création de server &#10;Commande de création de la table de la base de donnée.">
+      <option name="closed" value="true" />
+      <created>1700923665856</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1700923665856</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Mise en place d'un step by step">
+      <option name="closed" value="true" />
+      <created>1700933641178</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700933641178</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Modification du step by step">
+      <option name="closed" value="true" />
+      <created>1701017247852</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701017247852</updated>
+    </task>
+    <task id="LOCAL-00022" summary="envoie d'erreur pour affichage front&#10;tentative fix bug redirect avant fin">
+      <option name="closed" value="true" />
+      <created>1701079658169</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1701079658170</updated>
+    </task>
+    <task id="LOCAL-00023" summary="envoie d'erreur pour affichage front&#10;tentative fix bug redirect avant fin">
+      <option name="closed" value="true" />
+      <created>1701110304664</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1701110304664</updated>
+    </task>
+    <task id="LOCAL-00024" summary="début WS pour connecter la page des serveurs avec le back pour reload/start/kill des instances">
+      <option name="closed" value="true" />
+      <created>1701203348557</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1701203348557</updated>
+    </task>
+    <task id="LOCAL-00025" summary="tentative pour trouver le problème">
+      <option name="closed" value="true" />
+      <created>1701283072166</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1701283072166</updated>
+    </task>
+    <task id="LOCAL-00026" summary="NSM ça marche pas">
+      <option name="closed" value="true" />
+      <created>1701376214363</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1701376214363</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py" />
+    <MESSAGE value="Suppression de l'image pour la creation de serveur dans all_server.html" />
+    <MESSAGE value="- Ajout du Cog home.py&#10;- Ajout du Cog login.py" />
+    <MESSAGE value="- Ajout du Cog show_server.py" />
+    <MESSAGE value="- Ajout du Cog create_server.py" />
+    <MESSAGE value="- Ajout du Cog run_server.py" />
+    <MESSAGE value="- Mise en conformité avec la nouvelle base de données" />
+    <MESSAGE value="Lancements des commandes &#10;mise a jours des noms de tables" />
+    <MESSAGE value="Ajout d'une page de configuration pour les admins" />
+    <MESSAGE value="Suppressions de la partie admin qui vas être relocaliser" />
+    <MESSAGE value="." />
+    <MESSAGE value="Clarification du projet via le README.md" />
+    <MESSAGE value="Définition de la table de server dans README.md" />
+    <MESSAGE value="Modification du front création de server &#10;Commande de création de la table de la base de donnée." />
+    <MESSAGE value="Mise en place d'un step by step" />
+    <MESSAGE value="Modification du step by step" />
+    <MESSAGE value="envoie d'erreur pour affichage front&#10;tentative fix bug redirect avant fin" />
+    <MESSAGE value="début WS pour connecter la page des serveurs avec le back pour reload/start/kill des instances" />
+    <MESSAGE value="tentative pour trouver le problème" />
+    <MESSAGE value="NSM ça marche pas" />
+    <option name="LAST_COMMIT_MESSAGE" value="NSM ça marche pas" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Server_Manager$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1695660901959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Server_Manager$Server_Manager.coverage" NAME="Server-Manager Coverage Results" MODIFIED="1701375889386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

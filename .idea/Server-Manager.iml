@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
-  <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/venv" />
-    </content>
-    <orderEntry type="jdk" jdkName="Python 3.11 (Server-Manager)" jdkType="Python SDK" />
-    <orderEntry type="sourceFolder" forTests="false" />
+  <component name="Flask">
+    <option name="enabled" value="true" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
