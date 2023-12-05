@@ -23,18 +23,8 @@ function nextStep(currentDiv, nextDiv, isThisTheLastItem = false){
     }
 }
 
-function isBoxChecked(checkBoxID, textIdToShow) {
-    let textToShow = document.getElementById(textIdToShow);
-    let checkBox = document.getElementById(checkBoxID);
-
-    if (checkBox.checked === true){
-        textToShow.style.display = 'block';
-    } else {
-        textToShow.style.display = 'none';
-    }
-}
 
 // Fonction servant à supprimer l'affichage d'une pop-up (modal bulma)
 function closeModal(modalToClose){
-    document.getElementById("alert-field-empty").classList.remove('is-active'); // Suppression de la pop-up
+    document.getElementById(modalToClose).classList.remove('is-active'); // Suppression de la pop-up
 }
