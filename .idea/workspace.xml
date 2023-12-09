@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="remove de ce qui marche pas (dans le JS sinon je delete tout le projet)">
+    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="remove useless function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/create_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/create_server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="20482" />
+    <option name="totalTimeSeconds" value="20563" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -39,7 +38,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/templates/create_server.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -159,7 +157,10 @@
       <workItem from="1701602766248" duration="1322000" />
       <workItem from="1701683827339" duration="619000" />
       <workItem from="1701710941871" duration="1675000" />
-      <workItem from="1701797529272" duration="1253000" />
+      <workItem from="1701797529272" duration="1334000" />
+      <workItem from="1701863279951" duration="541000" />
+      <workItem from="1701874057792" duration="368000" />
+      <workItem from="1701874699309" duration="665000" />
     </task>
     <task id="LOCAL-00001" summary="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py">
       <option name="closed" value="true" />
@@ -377,7 +378,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701455975352</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="remove useless function">
+      <option name="closed" value="true" />
+      <created>1701807376354</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1701807376354</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +452,19 @@
     <MESSAGE value="tentative pour trouver le problème" />
     <MESSAGE value="NSM ça marche pas" />
     <MESSAGE value="remove de ce qui marche pas (dans le JS sinon je delete tout le projet)" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove de ce qui marche pas (dans le JS sinon je delete tout le projet)" />
+    <MESSAGE value="remove useless function" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove useless function" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/static/create_server.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Server_Manager$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1695660901959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
