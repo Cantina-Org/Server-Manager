@@ -17,7 +17,7 @@ def create_server_cogs(database, alert, dir_path):
 
         try:
             mkdir(dir_path + secure_filename(request.form['server-name']))
-            database.insert("""INSERT INTO cantina_server_manager.server(name, local_name, owner_name, permission) 
+            database.exec("""INSERT INTO cantina_server_manager.server(name, local_name, owner_name, permission) 
             VALUES (%s, %s, %s, %s)""", (request.form['server-name'], '', '', {}))
             return redirect(url_for('server'))
         except FileExistsError as e:

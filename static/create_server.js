@@ -28,3 +28,33 @@ function nextStep(currentDiv, nextDiv, isThisTheLastItem = false){
 function closeModal(modalToClose){
     document.getElementById(modalToClose).classList.remove('is-active'); // Suppression de la pop-up
 }
+
+// Soummetre le
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("#formCreateServer");
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // On enlève le submit
+
+            const formData = new FormData(document.getElementById("formCreateServer"));
+
+            if (isLastItemShowed) {
+                fetch("your_server_endpoint", {
+                    method: "POST",
+                    body: formData,
+                })
+                .then(response => {
+                    // Handle response from server
+                    console.log("Form submitted successfully!", response);
+                    // You can perform further actions here upon successful form submission
+                })
+                .catch(error => {
+                    console.error("Error submitting the form:", error);
+                });
+            }
+        });
+    } else {
+        console.error("L'élément #formCreateServer n'a pas été trouvé.");
+    }
+});
+
