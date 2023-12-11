@@ -39,14 +39,18 @@ document.addEventListener("DOMContentLoaded", function() {
             const formData = new FormData(document.getElementById("formCreateServer"));
 
             if (isLastItemShowed) {
-                fetch("your_server_endpoint", {
+                fetch("#", {
                     method: "POST",
                     body: formData,
                 })
                 .then(response => {
                     // Handle response from server
                     console.log("Form submitted successfully!", response);
-                    // You can perform further actions here upon successful form submission
+                    if (response.status === 0) {
+                        window.location.href = "http://www.w3schools.com";
+                    } else if (response.status === 500){
+                        window.location.href = response.url;
+                    }
                 })
                 .catch(error => {
                     console.error("Error submitting the form:", error);
