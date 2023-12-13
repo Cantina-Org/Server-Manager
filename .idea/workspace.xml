@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="ça marche j'ai un step by step qui fonctionne!!!!!!">
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="pas encore affichage de l'erreur mais ça arrive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/create_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/create_server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="23770" />
+    <option name="totalTimeSeconds" value="24135" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -99,7 +97,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-67fca87a943a-c986f194a52a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.259" />
+        <option value="bundled-python-sdk-7a29c1521ef0-c986f194a52a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.298" />
       </set>
     </attachedChunks>
   </component>
@@ -165,7 +163,11 @@
       <workItem from="1701874699309" duration="665000" />
       <workItem from="1702217470338" duration="5043000" />
       <workItem from="1702287551242" duration="964000" />
-      <workItem from="1702316383218" duration="1770000" />
+      <workItem from="1702316383218" duration="2612000" />
+      <workItem from="1702404435724" duration="1263000" />
+      <workItem from="1702414165010" duration="13000" />
+      <workItem from="1702491558953" duration="26000" />
+      <workItem from="1702491606494" duration="606000" />
     </task>
     <task id="LOCAL-00001" summary="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py">
       <option name="closed" value="true" />
@@ -399,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702232830487</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="pas encore affichage de l'erreur mais ça arrive">
+      <option name="closed" value="true" />
+      <created>1702319019163</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1702319019163</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,10 +477,11 @@
     <MESSAGE value="remove de ce qui marche pas (dans le JS sinon je delete tout le projet)" />
     <MESSAGE value="remove useless function" />
     <MESSAGE value="ça marche j'ai un step by step qui fonctionne!!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="ça marche j'ai un step by step qui fonctionne!!!!!!" />
+    <MESSAGE value="pas encore affichage de l'erreur mais ça arrive" />
+    <option name="LAST_COMMIT_MESSAGE" value="pas encore affichage de l'erreur mais ça arrive" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Server_Manager$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1695660901959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Server_Manager$Server_Manager.coverage" NAME="Server-Manager Coverage Results" MODIFIED="1702316568080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server_Manager$Server_Manager.coverage" NAME="Server-Manager Coverage Results" MODIFIED="1702318860701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
