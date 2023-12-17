@@ -1,13 +1,12 @@
 from flask import Flask
-from Utils import Database
 from os import getcwd, path
 from json import load
+from cantinaUtils.Database import DataBase
 from flask_sock import Sock
 from Cogs.login import login_cogs
 from Cogs.home import home_cogs
 from Cogs.show_server import show_server_cogs
 from Cogs.create_server import create_server_cogs
-from Cogs.run_server import run_server_cogs
 
 dir_path = path.abspath(getcwd()) + '/server/'
 app = Flask(__name__)
@@ -15,9 +14,8 @@ sock = Sock(app)
 with open(path.abspath(getcwd()) + "/config.json") as conf_file:
     config_data = load(conf_file)
 
-database = Database.DataBase(user=config_data['database'][0]['database_username'],
-                             password=config_data['database'][0]['database_password'],
-                             host="localhost", port=3306)
+database = DataBase(user=config_data['database'][0]['database_username'],
+                    password=config_data['database'][0]['database_password'], host="localhost", port=3306)
 database.connection()
 
 
@@ -39,10 +37,10 @@ def server(server_id=None):
 
 
 @sock.route('/server/ws')
-def run_server(sock):
+def run_server(socket):
     while True:
-        data = sock.receive()
-        sock.send(data)
+        data = socket.receive()
+        socket.send(data)
 
 
 @app.route('/server/create', methods=['POST', 'GET'])

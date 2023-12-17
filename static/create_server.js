@@ -23,18 +23,42 @@ function nextStep(currentDiv, nextDiv, isThisTheLastItem = false){
     }
 }
 
-function isBoxChecked(checkBoxID, textIdToShow) {
-    let textToShow = document.getElementById(textIdToShow);
-    let checkBox = document.getElementById(checkBoxID);
-
-    if (checkBox.checked === true){
-        textToShow.style.display = 'block';
-    } else {
-        textToShow.style.display = 'none';
-    }
-}
 
 // Fonction servant à supprimer l'affichage d'une pop-up (modal bulma)
 function closeModal(modalToClose){
-    document.getElementById("alert-field-empty").classList.remove('is-active'); // Suppression de la pop-up
+    document.getElementById(modalToClose).classList.remove('is-active'); // Suppression de la pop-up
 }
+
+// Soummetre le
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("#formCreateServer");
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // On enlève le submit
+
+            const formData = new FormData(document.getElementById("formCreateServer"));
+
+            if (isLastItemShowed) {
+                fetch("#", {
+                    method: "POST",
+                    body: formData,
+                })
+                .then(response => {
+                    // Handle response from server
+                    console.log("Form submitted successfully!", response);
+                    if (response.status === 0) {
+                        window.location.href = "http://www.w3schools.com";
+                    } else if (response.status === 500){
+                        window.location.href = response.url;
+                    }
+                })
+                .catch(error => {
+                    console.error("Error submitting the form:", error);
+                });
+            }
+        });
+    } else {
+        console.error("L'élément #formCreateServer n'a pas été trouvé.");
+    }
+});
+

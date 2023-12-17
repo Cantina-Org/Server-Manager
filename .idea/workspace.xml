@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="NSM ça marche pas">
+    <list default="true" id="961d11ad-22d1-4158-bdca-bcf01a813cc7" name="Changes" comment="pas encore affichage de l'erreur mais ça arrive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="19651" />
+    <option name="totalTimeSeconds" value="24135" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -38,7 +38,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/templates/create_server.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,7 +69,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -95,7 +97,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d84064030637-9e8a10399a4a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.32" />
+        <option value="bundled-python-sdk-7a29c1521ef0-c986f194a52a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.298" />
       </set>
     </attachedChunks>
   </component>
@@ -148,6 +150,24 @@
       <workItem from="1701272523286" duration="3669000" />
       <workItem from="1701366791214" duration="4560000" />
       <workItem from="1701376757294" duration="82000" />
+      <workItem from="1701454865671" duration="1292000" />
+      <workItem from="1701525371286" duration="1235000" />
+      <workItem from="1701526909596" duration="747000" />
+      <workItem from="1701529110808" duration="447000" />
+      <workItem from="1701602766248" duration="1322000" />
+      <workItem from="1701683827339" duration="619000" />
+      <workItem from="1701710941871" duration="1675000" />
+      <workItem from="1701797529272" duration="1334000" />
+      <workItem from="1701863279951" duration="541000" />
+      <workItem from="1701874057792" duration="368000" />
+      <workItem from="1701874699309" duration="665000" />
+      <workItem from="1702217470338" duration="5043000" />
+      <workItem from="1702287551242" duration="964000" />
+      <workItem from="1702316383218" duration="2612000" />
+      <workItem from="1702404435724" duration="1263000" />
+      <workItem from="1702414165010" duration="13000" />
+      <workItem from="1702491558953" duration="26000" />
+      <workItem from="1702491606494" duration="606000" />
     </task>
     <task id="LOCAL-00001" summary="- app.py:&#10; - Création du cogs pour le login&#10; -Reformat de l'acces au cookie du token&#10; - Ajout de l'utilisation du port de config.json&#10;- home.html:&#10; - suppression lien vers panel admin&#10;- Suppression de login.html&#10;- Ajout de Utils.py">
       <option name="closed" value="true" />
@@ -357,7 +377,39 @@
       <option name="project" value="LOCAL" />
       <updated>1701376214363</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="remove de ce qui marche pas (dans le JS sinon je delete tout le projet)">
+      <option name="closed" value="true" />
+      <created>1701455975352</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1701455975352</updated>
+    </task>
+    <task id="LOCAL-00028" summary="remove useless function">
+      <option name="closed" value="true" />
+      <created>1701807376354</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1701807376354</updated>
+    </task>
+    <task id="LOCAL-00029" summary="ça marche j'ai un step by step qui fonctionne!!!!!!">
+      <option name="closed" value="true" />
+      <created>1702232830487</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1702232830487</updated>
+    </task>
+    <task id="LOCAL-00030" summary="pas encore affichage de l'erreur mais ça arrive">
+      <option name="closed" value="true" />
+      <created>1702319019163</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1702319019163</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,10 +474,14 @@
     <MESSAGE value="début WS pour connecter la page des serveurs avec le back pour reload/start/kill des instances" />
     <MESSAGE value="tentative pour trouver le problème" />
     <MESSAGE value="NSM ça marche pas" />
-    <option name="LAST_COMMIT_MESSAGE" value="NSM ça marche pas" />
+    <MESSAGE value="remove de ce qui marche pas (dans le JS sinon je delete tout le projet)" />
+    <MESSAGE value="remove useless function" />
+    <MESSAGE value="ça marche j'ai un step by step qui fonctionne!!!!!!" />
+    <MESSAGE value="pas encore affichage de l'erreur mais ça arrive" />
+    <option name="LAST_COMMIT_MESSAGE" value="pas encore affichage de l'erreur mais ça arrive" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Server_Manager$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1695660901959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Server_Manager$Server_Manager.coverage" NAME="Server-Manager Coverage Results" MODIFIED="1701375889386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server_Manager$Server_Manager.coverage" NAME="Server-Manager Coverage Results" MODIFIED="1702318860701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
